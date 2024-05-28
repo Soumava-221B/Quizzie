@@ -1,1 +1,1 @@
-# Quizzie
+# Quizzie: Web App for creating instant quiz

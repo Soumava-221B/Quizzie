@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #041325;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz_container{
+    height: 85vh;
+    width: 85vw;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.header_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+
+.header_container p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.question_container{
+    padding: 0 2%;
+    width: 100%;
+}
+
+.options_container{
+    height: 53%;
+    width: 75%;
+    margin-top: 2%;
+    margin-left: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.option_textandimg{
+    height: 45%;
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+}
+
+.option_textandimg div{
+    width: 45%;
+    text-align: center;
+    font-size: large;
+}
+.option_textandimg img{
+    height: 80%;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.option_text {
+    height: 45%;
+    width: 45%;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    padding: 0 1.5%;
+    font-size: larger;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option_img{
+    height: 45%;
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+}
+
+.option_img img{
+    height: 80%;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.footer_container{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_container button{
+    height: 100%;
+    width: 18%;
+    font-size: x-large;
+    outline: none; 
+    border: none;
+    background-color: #60B84B;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected_option{
+    border: 2px solid #5076FF;
+}
+
+.pollresult_container{
+    height: 85vh;
+    width: 85vw;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pollresult_container div{
+    width: 40%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.QAresult_container{
+    height: 85vh;
+    width: 85vw;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.QAresult_container div{
+    height: 80%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.QAresult_container div img{
+    height: 45vh;
+    width: 25vw;
+}
+
+.QAresult_container div p {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 250px) and (max-width: 450px){
+    .quiz_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    border-radius: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+}
+
+.header_container p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.question_container{
+    padding: 0 2%;
+    width: 100%;
+}
+
+.question_container h2{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.options_container{
+    height: 53%;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3%;
+}
+
+.option_textandimg{
+    height: 22%;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+}
+
+.option_textandimg div{
+    width: 50%;
+    text-align: center;
+    font-size: smaller;
+}
+.option_textandimg img{
+    height: 80%;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.option_text {
+    height: 22%;
+    width: 90%;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    padding: 0 1.5%;
+    font-size: smaller;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option_img{
+    height: 22%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+}
+
+.option_img img{
+    height: 90%;
+    width: 60%;
+    border-radius: 5px;
+}
+
+.footer_container{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_container button{
+    height: 100%;
+    width: 45%;
+    font-size: large;
+    outline: none; 
+    border: none;
+    background-color: #60B84B;
+    font-weight: 600;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected_option{
+    border: 2px solid #5076FF;
+}
+
+.pollresult_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pollresult_container div{
+    width: 70%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.QAresult_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.QAresult_container div{
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.QAresult_container div img{
+    height: 25vh;
+    width: 45vw;
+}
+
+.QAresult_container div p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+}

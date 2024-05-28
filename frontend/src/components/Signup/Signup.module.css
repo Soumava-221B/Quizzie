@@ -1,0 +1,59 @@
+.form_div{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 60%;
+    justify-content: space-evenly;
+}
+
+.input_div{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    align-items: center;
+    position: relative;
+}
+
+.input_div label{
+   width: 35%;
+   text-align: right;
+   font-weight: 500;
+}
+
+.input_div input{
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   background-color: #F4F4F4;
+   width: 60%;
+   height: 35px;
+   padding-left: 15px;
+}
+
+.input_div p{
+    position: absolute;
+    left: 42%;
+    top: 105%;
+    font-size: smaller;
+    color: red;
+}
+
+.btn_div{
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_div button{
+    width: 30%;
+    height: 100%;
+    font-family: 'Poppins',sans-serif;
+    border: none;
+    outline: none;
+    background-color: #A9BCFF;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_container {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 20px;
+  height: 78vh;
+  width: 55vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #9F9F9F;
+  gap: 6%;
+}
+
+.question_buttons_div{
+  height: 8vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question_button{
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  border: 1px solid #9F9F9F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.buttons_container{
+  width: 35vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+}
+
+.addquestion_btn{
+  height: 5vh;
+  width: 5vh;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.8vh;
+  color: #9F9F9F;
+  cursor: pointer;
+}
+
+.question_button button{
+  border: none;
+  outline: none;
+  background: none;
+  position: absolute;
+  right: 0.1%;
+  top: 0.1%;
+}
+
+.green_border{
+  border: 2px solid #60B84B;
+}
+
+
+.questiontext_inputbox{
+  width: 50vw;
+  height: 6vh;
+  box-shadow: 0 0 5px 0.5px gray;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.radio_button_div{
+  height: 5vh;
+  width: 48vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options_timer_div{
+  height: 30vh;
+  width: 49vw;
+  display: flex;
+}
+
+.options_div{
+  height: 100%;
+  width: 77%;
+}
+
+.timer_div{
+  height: 80%;
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.timer_div p{
+  font-size: 1.1rem;
+}
+
+.timer_button{
+  border: none;
+  outline: none;
+  height: 20%;
+  width: 50%;
+  font-size: 1rem;
+  color: #9F9F9F;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 1px gray;
+  cursor: pointer;
+}
+
+.selectedtimer_button{
+  border: none;
+  outline: none;
+  height: 20%;
+  width: 50%;
+  font-size: 1rem;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 3px 1px gray;
+  cursor: pointer;
+  background-color: #D60000;
+}
+
+.optiontype_radio{
+  accent-color: black;
+}
+
+.options_div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5%;
+}
+
+.options_div .option_inputbox{
+  outline: none;
+  border: none;
+  box-shadow: 0 0 3px 1px gray;
+  height: 100%;
+  width: 45%;
+  padding-left: 2%;
+  border-radius: 3px;
+}
+
+.options_div .checked_inputbox{
+  outline: none;
+  border: none;
+  box-shadow: 0 0 3px 1px gray;
+  height: 100%;
+  width: 45%;
+  padding-left: 2%;
+  border-radius: 3px;
+  background-color: #60B84B;
+  color: white;
+}
+
+
+.options_div .addoption_button{
+  outline: none;
+  border: none;
+  background: none;
+  width: 45%;
+  box-shadow: 0 0 3px 1px gray;
+  border-radius: 3px;
+  height: 16%;
+  color: black;
+  font-size: large;
+  cursor: pointer;
+  margin-left: 1.2vw;
+}
+
+.options_div .addoption_button_poll{
+  outline: none;
+  border: none;
+  background: none;
+  width: 45%;
+  box-shadow: 0 0 3px 1px gray;
+  border-radius: 3px;
+  height: 16%;
+  color: black;
+  font-size: large;
+  cursor: pointer;
+}
+
+.createquiz_cancel_div{
+  height: 6vh;
+  width: 42vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.createquiz_cancel_div button{
+  height: 90%;
+  width: 40%;
+  font-size: large;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
