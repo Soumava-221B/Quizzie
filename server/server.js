@@ -24,7 +24,7 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//mouting login and register routes
+//Routing login and register routes
 app.use("/api/auth", authRoutes);
 
 app.use("/api/quiz", quizRoutes);
