@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar/Sidebar.jsx";
 import QuizAnalysisPoll from "../../components/QuizAnalysisPoll/QuizAnalysisPoll.jsx";
 import QuizAnalysisQA from "../../components/QuizAnalysisQA/QuizAnalysisQA.jsx";
 import { useLocation } from "react-router-dom";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const QuizAnalysis = () => {
@@ -16,11 +16,11 @@ const QuizAnalysis = () => {
       if (id) {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/quiz/getaquiz/${id}`
+            `https://quizzie-backend-ydj6.onrender.com/api/quiz/getaquiz/${id}`
           );
           if (response.status === 200) {
-            const data = response.data
-            setquizData({...data})
+            const data = response.data;
+            setquizData({ ...data });
           }
         } catch (error) {
           console.log(error);
@@ -28,8 +28,7 @@ const QuizAnalysis = () => {
       }
     };
     fetchdata();
-    }
-  ,[id]);
+  }, [id]);
 
   return (
     quizData && (

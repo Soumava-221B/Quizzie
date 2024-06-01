@@ -13,7 +13,7 @@ const Dashboard = () => {
     (async function () {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/quiz/trendingquizzes",
+          "https://quizzie-backend-ydj6.onrender.com/api/quiz/trendingquizzes",
           {
             headers: {
               "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const Dashboard = () => {
     (async function () {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/quiz/getallquizzes",
+          "https://quizzie-backend-ydj6.onrender.com/api/quiz/getallquizzes",
           {
             headers: {
               "Content-Type": "application/json",

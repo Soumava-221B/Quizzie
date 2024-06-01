@@ -11,7 +11,7 @@ const Deletepopup = ({ deleteId, setdeletequizPopup }) => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/quiz/delete/${deleteId}`,
+        `https://quizzie-backend-ydj6.onrender.com/api/quiz/delete/${deleteId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -34,15 +34,28 @@ const Deletepopup = ({ deleteId, setdeletequizPopup }) => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className={styles.popup_background}>
       <div className={styles.popup}>
         <h2>Are you confirm you want to delete ?</h2>
         <div className={styles.button_div}>
-          <button style={{ backgroundColor: "#FF4B4B",color:"white" }} onClick={handleconfirmDelete} >Confirm Delete</button>
-          <button style={{ boxShadow: "0 0 3px 1px gray" }} onClick={(e) => { e.preventDefault(); setdeletequizPopup(false)}}>Cancel</button>
+          <button
+            style={{ backgroundColor: "#FF4B4B", color: "white" }}
+            onClick={handleconfirmDelete}
+          >
+            Confirm Delete
+          </button>
+          <button
+            style={{ boxShadow: "0 0 3px 1px gray" }}
+            onClick={(e) => {
+              e.preventDefault();
+              setdeletequizPopup(false);
+            }}
+          >
+            Cancel
+          </button>
         </div>
       </div>
     </div>
@@ -51,6 +64,6 @@ const Deletepopup = ({ deleteId, setdeletequizPopup }) => {
 
 Deletepopup.propTypes = {
   deleteId: PropTypes.string.isRequired,
-  setdeletequizPopup: PropTypes.func.isRequired
-}
+  setdeletequizPopup: PropTypes.func.isRequired,
+};
 export default Deletepopup;

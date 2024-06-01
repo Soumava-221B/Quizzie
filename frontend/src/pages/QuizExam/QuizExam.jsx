@@ -3,7 +3,7 @@ import styles from "./QuizExam.module.css";
 import { useParams } from "react-router-dom";
 import trophyImage from "../../images/trophy.png";
 import Timer from "../../components/Timer/Timer.jsx";
-import axios from "axios"
+import axios from "axios";
 
 export const QuizExam = () => {
   const { id } = useParams();
@@ -15,14 +15,14 @@ export const QuizExam = () => {
   const [score, setScore] = useState(0);
   const [showResult, setshowResult] = useState(false);
   const [showTimer, setshowTimer] = useState(true);
-  
+
   useEffect(() => {
     if (id) {
       setquizId(id);
       (async () => {
         try {
           const response = await axios.get(
-            `http://localhost:4000/api/quiz/getaquiz/${id}`
+            `https://quizzie-backend-ydj6.onrender.com/api/quiz/getaquiz/${id}`
           );
           setquizData(response.data);
           setQuestions(response.data.questions);
@@ -33,14 +33,15 @@ export const QuizExam = () => {
 
       (async () => {
         try {
-          await axios.patch(`http://localhost:4000/api/quiz/impression/${id}`);
+          await axios.patch(
+            `https://quizzie-backend-ydj6.onrender.com/api/quiz/impression/${id}`
+          );
         } catch (error) {
           console.log(error);
         }
       })();
     }
-  }, [id])
-  
+  }, [id]);
 
   useEffect(() => {
     if (quizData?.timer) {
@@ -49,31 +50,35 @@ export const QuizExam = () => {
       }
       const questionInterval = setInterval(() => {
         handleNextQuestion();
-      }, quizData.timer * 1000)
+      }, quizData.timer * 1000);
       return () => clearInterval(questionInterval);
     }
-  })
-
-  
+  });
 
   const handleNextQuestion = async () => {
     setshowTimer(false);
     if (quizData.quiztype == "Q&A") {
-      if (selectedOptionIndex == Questions[currentQuestionindex].correctoptionindex) {
+      if (
+        selectedOptionIndex ==
+        Questions[currentQuestionindex].correctoptionindex
+      ) {
         const newquestions = [...Questions];
-        newquestions[currentQuestionindex].attempt = Questions[currentQuestionindex].attempt + 1;
-        newquestions[currentQuestionindex].correct = Questions[currentQuestionindex].correct + 1;
-        await setQuestions(newquestions)
-        await setScore(prev => prev + 1);
+        newquestions[currentQuestionindex].attempt =
+          Questions[currentQuestionindex].attempt + 1;
+        newquestions[currentQuestionindex].correct =
+          Questions[currentQuestionindex].correct + 1;
+        await setQuestions(newquestions);
+        await setScore((prev) => prev + 1);
       } else {
         const newquestion = [...Questions];
-        newquestion[currentQuestionindex].attempt = Questions[currentQuestionindex].attempt + 1;
-        await setQuestions(newquestion)
+        newquestion[currentQuestionindex].attempt =
+          Questions[currentQuestionindex].attempt + 1;
+        await setQuestions(newquestion);
       }
     }
 
     if (quizData.quiztype == "Poll") {
-      if (selectedOptionIndex==0 || selectedOptionIndex) {
+      if (selectedOptionIndex == 0 || selectedOptionIndex) {
         const newquestions = [...Questions];
         newquestions[currentQuestionindex].options[selectedOptionIndex].count =
           Questions[currentQuestionindex].options[selectedOptionIndex].count +
@@ -84,15 +89,14 @@ export const QuizExam = () => {
 
     try {
       await axios.patch(
-        `http://localhost:4000/api/quiz/result/${quizId}`,
+        `https://quizzie-backend-ydj6.onrender.com/api/quiz/result/${quizId}`,
         Questions
       );
     } catch (error) {
       console.log(error);
     }
-  
 
-    if(currentQuestionindex < Questions.length - 1){
+    if (currentQuestionindex < Questions.length - 1) {
       setcurrentQuestionindex((prev) => prev + 1);
     }
 
@@ -101,8 +105,7 @@ export const QuizExam = () => {
     }
     setselectedOptionIndex(null);
     setshowTimer(true);
-  }
-
+  };
 
   const handleOptionSelected = (e) => {
     const { id } = e.target;
@@ -111,8 +114,8 @@ export const QuizExam = () => {
     } else {
       setselectedOptionIndex(id);
     }
-  }
-  
+  };
+
   return (
     <div className={styles.main_container}>
       {!showResult && (
@@ -121,11 +124,11 @@ export const QuizExam = () => {
             <p style={{ color: "black" }}>
               0{currentQuestionindex + 1}/0{Questions?.length}
             </p>
-            {(quizData.timer && showTimer) ? (
+            {quizData.timer && showTimer ? (
               <p style={{ color: "red" }}>
                 <Timer timer={quizData.timer} />
               </p>
-            ):null}
+            ) : null}
           </div>
 
           <div className={styles.question_container}>
@@ -211,6 +214,6 @@ export const QuizExam = () => {
       )}
     </div>
   );
-}
+};
 
 export default QuizExam;
