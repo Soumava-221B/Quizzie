@@ -184,7 +184,7 @@ const QuestionsPopup = ({
     newquestions[selectedIndex] = {
       ...newquestions[selectedIndex],
       options: newoptions,
-      correctoptionindex:null
+      correctoptionindex: null,
     };
     setquizData((prevquizData) => {
       return {
@@ -276,7 +276,7 @@ const QuestionsPopup = ({
         setcreatequestionsPopup(false);
         setcreatequizPopup(false);
         setlinkId(
-          `http://localhost:5173/quizexam/${response.data.newquiz._id}`
+          `https://quizzie-self.vercel.app/quizexam/${response.data.newquiz._id}`
         );
       }
     } catch (error) {
@@ -290,7 +290,8 @@ const QuestionsPopup = ({
     for (const question of quizData.questions) {
       if (
         !question?.questiontext ||
-        (quizData?.quiztype == "Q&A" && question?.correctoptionindex===null) ||
+        (quizData?.quiztype == "Q&A" &&
+          question?.correctoptionindex === null) ||
         !question?.options.every((option) => {
           if (quizData.optiontype === "text") {
             return option.optionText.trim() !== "";
@@ -337,7 +338,7 @@ const QuestionsPopup = ({
         setcreatequestionsPopup(false);
         setsharePopup(true);
         setlinkId(
-          `http://localhost:5173/quizexam/${response.data.editedquiz._id}`
+          `https://quizzie-self.vercel.app/quizexam/${response.data.editedquiz._id}`
         );
       }
     } catch (error) {
