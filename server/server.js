@@ -32,7 +32,7 @@ app.use("/api/quiz", quizRoutes);
 //Checking Health Route
 app.get("/", (req, res) => {
   res.json({
-    message: "Checking Health Route",
+    message: "Server up and running",
   });
 });
 
