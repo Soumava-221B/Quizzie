@@ -276,7 +276,7 @@ const QuestionsPopup = ({
         setcreatequestionsPopup(false);
         setcreatequizPopup(false);
         setlinkId(
-          `https://quizzie-self.vercel.app/quizexam/${response.data.newquiz._id}`
+          `http://localhost:5173/quizexam/${response.data.newquiz._id}`
         );
       }
     } catch (error) {
@@ -338,7 +338,7 @@ const QuestionsPopup = ({
         setcreatequestionsPopup(false);
         setsharePopup(true);
         setlinkId(
-          `https://quizzie-self.vercel.app/quizexam/${response.data.editedquiz._id}`
+          `http://localhost:5173/quizexam/${response.data.editedquiz._id}`
         );
       }
     } catch (error) {
