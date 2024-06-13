@@ -49,7 +49,7 @@ const Analytics = () => {
   const handleShare = (e) => {
     const { id } = e.target;
     navigator.clipboard
-      .writeText(`http://localhost:5173/quizexam/${id}`)
+      .writeText(`https://quizzie-self.vercel.app/quizexam/${id}`)
       .then(() => {
         toast.success("Link Copied to Clipboard!");
       })
